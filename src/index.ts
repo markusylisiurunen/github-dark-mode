@@ -1,7 +1,267 @@
 import fs from "fs";
 import { promisify } from "util";
+import _flow from "lodash.flow";
+
+import { multiplyTransparencyBy } from "./util";
 
 import gitHubColors from "./github-colors";
+
+function createTheme(prefix: string, colors: Record<string, string>) {
+  return Object.entries(colors).reduce(
+    (acc, [key, color]) => ({ ...acc, [`${prefix}.${key}`]: color }),
+    {}
+  );
+}
+
+// Common color flows
+// ==================
+
+const primaryBorderFlow = _flow([multiplyTransparencyBy(0.8)]);
+
+// Workbench
+// =========
+
+const titleBarTheme = createTheme("titleBar", {
+  activeBackground: gitHubColors.bgTertiary,
+  activeForeground: gitHubColors.textPrimary,
+  inactiveBackground: gitHubColors.bgTertiary,
+  inactiveForeground: gitHubColors.textSecondary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const activityBarTheme = createTheme("activityBar", {
+  background: gitHubColors.bgTertiary,
+  foreground: gitHubColors.textPrimary,
+  inactiveForeground: gitHubColors.textSecondary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  activeBorder: gitHubColors.autoOrange6,
+  activeFocusBorder: gitHubColors.autoOrange6,
+});
+
+const activityBarBadgeTheme = createTheme("activityBarBadge", {
+  background: gitHubColors.btnPrimaryBg,
+  foreground: gitHubColors.textPrimary,
+});
+
+const statusBarTheme = createTheme("statusBar", {
+  background: gitHubColors.bgInfo,
+  foreground: gitHubColors.textPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const sideBarTheme = createTheme("sideBar", {
+  background: gitHubColors.bgTertiary,
+  foreground: gitHubColors.textPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const sideBarTitleTheme = createTheme("sideBarTitle", {
+  foreground: gitHubColors.textPrimary,
+});
+
+const sideBarSectionHeaderTheme = createTheme("sideBarSectionHeader", {
+  background: gitHubColors.bgTertiary,
+  foreground: gitHubColors.textPrimary,
+});
+
+const listTheme = createTheme("list", {
+  activeSelectionBackground: gitHubColors.bgInfo,
+  activeSelectionForeground: gitHubColors.textPrimary,
+  hoverBackground: gitHubColors.bgInfo,
+  inactiveSelectionBackground: gitHubColors.bgInfo,
+  inactiveSelectionForeground: gitHubColors.textPrimary,
+  errorForeground: gitHubColors.alertErrorText,
+  warningForeground: gitHubColors.alertWarnText,
+  filterMatchBackground: "#fff0",
+  filterMatchBorder: gitHubColors.alertInfoBorder,
+  deemphasizedForeground: gitHubColors.textSecondary,
+});
+
+const listFilterWidgetTheme = createTheme("listFilterWidget", {
+  background: gitHubColors.bgInfo,
+  outline: primaryBorderFlow(gitHubColors.borderPrimary),
+  noMatchesOutline: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const treeTheme = createTheme("tree", {
+  indentGuidesStroke: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const editorGroupTheme = createTheme("editorGroup", {
+  emptyBackground: gitHubColors.bgPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const editorGroupHeaderTheme = createTheme("editorGroupHeader", {
+  noTabsBackground: gitHubColors.bgPrimary,
+  tabsBackground: gitHubColors.bgPrimary,
+  tabsBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const tabTheme = createTheme("tab", {
+  activeBackground: gitHubColors.bgTertiary,
+  activeForeground: gitHubColors.textPrimary,
+  activeBorder: gitHubColors.autoOrange6,
+  inactiveBackground: gitHubColors.bgPrimary,
+  inactiveForeground: gitHubColors.textSecondary,
+  hoverBackground: gitHubColors.bgTertiary,
+  hoverForeground: gitHubColors.textPrimary,
+});
+
+const terminalTheme = createTheme("terminal", {
+  ansiBlack: gitHubColors.ansiBlack,
+  ansiBlue: gitHubColors.ansiBlue,
+  ansiBrightBlack: gitHubColors.ansiBlackBright,
+  ansiBrightBlue: gitHubColors.ansiBlueBright,
+  ansiBrightCyan: gitHubColors.ansiCyanBright,
+  ansiBrightGreen: gitHubColors.ansiGreenBright,
+  ansiBrightMagenta: gitHubColors.ansiMagentaBright,
+  ansiBrightRed: gitHubColors.ansiRedBright,
+  ansiBrightWhite: gitHubColors.ansiWhiteBright,
+  ansiBrightYellow: gitHubColors.ansiYellowBright,
+  ansiCyan: gitHubColors.ansiCyan,
+  ansiGreen: gitHubColors.ansiGreen,
+  ansiMagenta: gitHubColors.ansiMagenta,
+  ansiRed: gitHubColors.ansiRed,
+  ansiWhite: gitHubColors.ansiWhite,
+  ansiYellow: gitHubColors.ansiYellow,
+});
+
+const editorTheme = createTheme("editor", {
+  background: gitHubColors.bgPrimary,
+  foreground: gitHubColors.textPrimary,
+
+  selectionBackground: gitHubColors.codeSelectionBg,
+  inactiveSelectionBackground: gitHubColors.codeSelectionBg,
+  selectionHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
+    gitHubColors.codeSelectionBg
+  ),
+  selectionHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+
+  wordHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
+    gitHubColors.codeSelectionBg
+  ),
+  wordHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  wordHighlightStrongBackground: _flow([multiplyTransparencyBy(0.5)])(
+    gitHubColors.codeSelectionBg
+  ),
+  wordHighlightStrongBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+
+  findMatchBackground: gitHubColors.codeSelectionBg,
+  findMatchHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
+    gitHubColors.codeSelectionBg
+  ),
+  findRangeHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
+    gitHubColors.codeSelectionBg
+  ),
+  findMatchHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  findRangeHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+
+  hoverHighlightBackground: gitHubColors.bgTertiary,
+
+  lineHighlightBackground: gitHubColors.bgInfo,
+  lineHighlightBorder: _flow([multiplyTransparencyBy(0.1)])(
+    gitHubColors.autoBlue9
+  ),
+});
+
+const editorGutterTheme = createTheme("editorGutter", {
+  modifiedBackground: gitHubColors.diffstatNeutralBg,
+  addedBackground: gitHubColors.diffstatAdditionBg,
+  deletedBackground: gitHubColors.diffstatDeletionBg,
+  foldingControlForeground: gitHubColors.textPrimary,
+});
+
+const editorLineNumberTheme = createTheme("editorLineNumber", {
+  foreground: gitHubColors.diffBlobNumText,
+  activeForeground: gitHubColors.diffBlobNumHoverText,
+});
+
+const editorIndentGuideTheme = createTheme("editorIndentGuide", {
+  background: gitHubColors.diffstatNeutralBorder,
+  activeBackground: gitHubColors.diffstatNeutralBorder,
+});
+
+const editorCursorTheme = createTheme("editorCursor", {
+  background: gitHubColors.bgInfo,
+  foreground: gitHubColors.textPrimary,
+});
+
+const editorRulerTheme = createTheme("editorRuler", {
+  foreground: gitHubColors.diffstatNeutralBorder,
+});
+
+const editorOverviewRulerTheme = createTheme("editorOverviewRuler", {
+  background: gitHubColors.bgTertiary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  rangeHighlightForeground: gitHubColors.codeSelectionBg,
+  selectionHighlightForeground: gitHubColors.codeSelectionBg,
+  wordHighlightForeground: gitHubColors.codeSelectionBg,
+  wordHighlightStrongForeground: gitHubColors.codeSelectionBg,
+  modifiedForeground: gitHubColors.diffstatNeutralBg,
+  addedForeground: gitHubColors.diffstatAdditionBg,
+  deletedForeground: gitHubColors.diffstatDeletionBg,
+  errorForeground: gitHubColors.alertErrorBg,
+  warningForeground: gitHubColors.alertWarnBg,
+  infoForeground: gitHubColors.alertInfoBg,
+  bracketMatchForeground: gitHubColors.codeSelectionBg,
+});
+
+const diffEditorTheme = createTheme("diffEditor", {
+  insertedTextBackground: gitHubColors.diffBlobAdditionNumBg,
+  removedTextBackground: gitHubColors.diffBlobDeletionNumBg,
+  diagonalFill: gitHubColors.diffBlobEmptyBlockBg,
+});
+
+const editorWidgetTheme = createTheme("editorWidget", {
+  background: gitHubColors.bgTertiary,
+  foreground: gitHubColors.textPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  resizeBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const editorSuggestWidgetTheme = createTheme("editorSuggestWidget", {
+  highlightForeground: gitHubColors.textPrimary,
+  selectedBackground: gitHubColors.bgInfo,
+});
+
+const peekViewTheme = createTheme("peekView", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const peekViewEditorTheme = createTheme("peekViewEditor", {
+  background: gitHubColors.bgTertiary,
+  matchHighlightBackground: gitHubColors.codeSelectionBg,
+});
+
+const peekViewEditorGutterTheme = createTheme("peekViewEditorGutter", {
+  background: gitHubColors.bgTertiary,
+});
+
+const peekViewResultTheme = createTheme("peekViewResult", {
+  background: gitHubColors.bgTertiary,
+  fileForeground: gitHubColors.textPrimary,
+  lineForeground: gitHubColors.textPrimary,
+  matchHighlightBackground: gitHubColors.codeSelectionBg,
+  selectionBackground: gitHubColors.codeSelectionBg,
+  selectionForeground: gitHubColors.textPrimary,
+});
+
+const peekViewTitleTheme = createTheme("peekViewTitle", {
+  background: gitHubColors.bgInfo,
+});
+
+const peekViewTitleLabelTheme = createTheme("peekViewTitleLabel", {
+  foreground: gitHubColors.textSecondary,
+});
+
+const peekViewTitleDescriptionTheme = createTheme("peekViewTitleDescription", {
+  foreground: gitHubColors.textPrimary,
+});
+
+// Theme file
+// ==========
 
 const writeFile = promisify(fs.writeFile);
 
@@ -14,6 +274,38 @@ async function main(): Promise<void> {
         type: "dark",
         semanticHighlighting: true,
         colors: {
+          ...titleBarTheme,
+          ...activityBarTheme,
+          ...activityBarBadgeTheme,
+          ...statusBarTheme,
+          ...sideBarTheme,
+          ...sideBarTitleTheme,
+          ...sideBarSectionHeaderTheme,
+          ...listTheme,
+          ...listFilterWidgetTheme,
+          ...treeTheme,
+          ...editorGroupTheme,
+          ...editorGroupHeaderTheme,
+          ...tabTheme,
+          ...terminalTheme,
+          ...editorTheme,
+          ...editorGutterTheme,
+          ...editorLineNumberTheme,
+          ...editorIndentGuideTheme,
+          ...editorCursorTheme,
+          ...editorRulerTheme,
+          ...editorOverviewRulerTheme,
+          ...diffEditorTheme,
+          ...editorWidgetTheme,
+          ...editorSuggestWidgetTheme,
+          ...peekViewTheme,
+          ...peekViewEditorTheme,
+          ...peekViewEditorGutterTheme,
+          ...peekViewResultTheme,
+          ...peekViewTitleTheme,
+          ...peekViewTitleLabelTheme,
+          ...peekViewTitleDescriptionTheme,
+
           // Base colors
           foreground: gitHubColors.textPrimary,
           "icon.foreground": gitHubColors.textPrimary,
@@ -35,48 +327,6 @@ async function main(): Promise<void> {
           "inputOption.activeBorder": gitHubColors.borderSecondary,
           "inputOption.activeForeground": gitHubColors.textPrimary,
 
-          // Title Bar
-          "titleBar.activeBackground": gitHubColors.bgPrimary,
-          "titleBar.activeForeground": gitHubColors.textSecondary,
-          "titleBar.inactiveBackground": gitHubColors.bgTertiary,
-          "titleBar.inactiveForeground": gitHubColors.textSecondary,
-          "titleBar.border": gitHubColors.borderPrimary,
-
-          // Activity bar
-          "activityBar.activeBackground": gitHubColors.bgTertiary,
-          "activityBar.activeBorder": gitHubColors.autoOrange5,
-          "activityBar.activeFocusBorder": gitHubColors.autoOrange7,
-          "activityBar.background": gitHubColors.bgCanvas,
-          "activityBar.border": gitHubColors.borderPrimary,
-          "activityBar.foreground": gitHubColors.textPrimary,
-          "activityBar.inactiveForeground": gitHubColors.textSecondary,
-
-          // Side Bar
-          "sideBar.background": gitHubColors.bgPrimary,
-          "sideBar.border": gitHubColors.borderPrimary,
-          "sideBar.foreground": gitHubColors.textSecondary,
-          "sideBarTitle.foreground": gitHubColors.textPrimary,
-          "sideBarSectionHeader.background": gitHubColors.bgTertiary,
-          "sideBarSectionHeader.border": gitHubColors.btnBorder,
-          "sideBarSectionHeader.foreground": gitHubColors.btnText,
-
-          // Editor Group
-          "editorGroup.border": gitHubColors.borderPrimary,
-          "editorGroup.emptyBackground": gitHubColors.bgPrimary,
-          "editorGroupHeader.noTabsBackground": gitHubColors.bgPrimary,
-          "editorGroupHeader.tabsBackground": gitHubColors.bgPrimary,
-          "editorGroupHeader.tabsBorder": gitHubColors.borderPrimary,
-          "editorGroupHeader.border": gitHubColors.borderPrimary,
-
-          // Tab
-          "tab.activeBackground": gitHubColors.bgTertiary,
-          "tab.activeForeground": gitHubColors.textPrimary,
-          "tab.activeBorder": gitHubColors.autoOrange5,
-          "tab.inactiveBackground": gitHubColors.bgPrimary,
-          "tab.inactiveForeground": gitHubColors.textSecondary,
-          "tab.hoverBackground": gitHubColors.btnBg,
-          "tab.hoverForeground": gitHubColors.textPrimary,
-
           // Panel
           "panel.background": gitHubColors.bgPrimary,
           "panel.border": gitHubColors.borderPrimary,
@@ -85,49 +335,12 @@ async function main(): Promise<void> {
           "panelTitle.activeForeground": gitHubColors.textPrimary,
           "panelTitle.inactiveForeground": gitHubColors.textSecondary,
 
-          // Status Bar
-          "statusBar.background": gitHubColors.btnBg,
-          "statusBar.foreground": gitHubColors.btnText,
-          "statusBar.border": gitHubColors.btnBorder,
-
-          // Terminal
-          "terminal.ansiBlack": gitHubColors.ansiBlack,
-          "terminal.ansiBlue": gitHubColors.ansiBlue,
-          "terminal.ansiBrightBlack": gitHubColors.ansiBlackBright,
-          "terminal.ansiBrightBlue": gitHubColors.ansiBlueBright,
-          "terminal.ansiBrightCyan": gitHubColors.ansiCyanBright,
-          "terminal.ansiBrightGreen": gitHubColors.ansiGreenBright,
-          "terminal.ansiBrightMagenta": gitHubColors.ansiMagentaBright,
-          "terminal.ansiBrightRed": gitHubColors.ansiRedBright,
-          "terminal.ansiBrightWhite": gitHubColors.ansiWhiteBright,
-          "terminal.ansiBrightYellow": gitHubColors.ansiYellowBright,
-          "terminal.ansiCyan": gitHubColors.ansiCyan,
-          "terminal.ansiGreen": gitHubColors.ansiGreen,
-          "terminal.ansiMagenta": gitHubColors.ansiMagenta,
-          "terminal.ansiRed": gitHubColors.ansiRed,
-          "terminal.ansiWhite": gitHubColors.ansiWhite,
-          "terminal.ansiYellow": gitHubColors.ansiYellow,
-
           // Breadcrumb
           "breadcrumb.background": gitHubColors.bgPrimary,
           "breadcrumb.foreground": gitHubColors.textSecondary,
           "breadcrumb.focusForeground": gitHubColors.textPrimary,
           "breadcrumb.activeSelectionForeground": gitHubColors.textPrimary,
           "breadcrumbPicker.background": gitHubColors.bgPrimary,
-
-          // Editor
-          "editor.background": gitHubColors.bgPrimary,
-          "editor.foreground": gitHubColors.textPrimary,
-          "editorLineNumber.foreground": gitHubColors.diffBlobNumText,
-          "editorLineNumber.activeForeground":
-            gitHubColors.diffBlobNumHoverText,
-          "editorCursor.foreground": gitHubColors.textPrimary,
-          "editor.lineHighlightBackground": gitHubColors.bgPrimary,
-          "editor.lineHighlightBorder": gitHubColors.diffstatNeutralBorder,
-          "editorIndentGuide.background": gitHubColors.diffstatNeutralBorder,
-          "editorIndentGuide.activeBackground":
-            gitHubColors.diffstatNeutralBorder,
-          "editorRuler.foreground": gitHubColors.diffstatNeutralBorder,
         },
       },
       null,
