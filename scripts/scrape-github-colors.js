@@ -9,10 +9,14 @@
   function rgbaToHexa(rgba) {
     const [_, values] = rgba.match(rgbaRegex);
 
-    const numbers = values.split(",").map((val) => parseFloat(val));
+    const numbers = values
+      .replace(/\s/g, "")
+      .split(",")
+      .map((val) => parseFloat(val));
+
     numbers[3] = parseInt(numbers[3] * 255, 10);
 
-    return `#${numbers.map((n) => n.toString(16)).join("")}`;
+    return `#${numbers.map((n) => n.toString(16).padStart(2, "0")).join("")}`;
   }
 
   const stylesheets = [...document.styleSheets];
