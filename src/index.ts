@@ -21,38 +21,43 @@ const primaryBorderFlow = _flow([multiplyTransparencyBy(0.8)]);
 // Workbench
 // =========
 
+// Title bar
+// ---------
+
 const titleBarTheme = createTheme("titleBar", {
-  activeBackground: gitHubColors.bgTertiary,
+  activeBackground: gitHubColors.bgBackdrop,
   activeForeground: gitHubColors.textPrimary,
-  inactiveBackground: gitHubColors.bgTertiary,
-  inactiveForeground: gitHubColors.textSecondary,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
+  inactiveBackground: gitHubColors.bgBackdrop,
+  inactiveForeground: gitHubColors.textSecondary,
 });
 
+// Activity bar
+// ------------
+
 const activityBarTheme = createTheme("activityBar", {
-  background: gitHubColors.bgTertiary,
-  foreground: gitHubColors.textPrimary,
-  inactiveForeground: gitHubColors.textSecondary,
-  border: primaryBorderFlow(gitHubColors.borderPrimary),
   activeBorder: gitHubColors.autoOrange6,
   activeFocusBorder: gitHubColors.autoOrange6,
+  background: gitHubColors.bgBackdrop,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  dropBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  foreground: gitHubColors.textPrimary,
+  inactiveForeground: gitHubColors.autoGray4,
 });
 
 const activityBarBadgeTheme = createTheme("activityBarBadge", {
-  background: gitHubColors.btnPrimaryBg,
-  foreground: gitHubColors.textPrimary,
+  background: gitHubColors.stateSelectedPrimaryBg,
+  foreground: gitHubColors.stateSelectedPrimaryText,
 });
 
-const statusBarTheme = createTheme("statusBar", {
-  background: gitHubColors.bgInfo,
-  foreground: gitHubColors.textPrimary,
-  border: primaryBorderFlow(gitHubColors.borderPrimary),
-});
+// Side bar
+// --------
 
 const sideBarTheme = createTheme("sideBar", {
-  background: gitHubColors.bgTertiary,
-  foreground: gitHubColors.textPrimary,
+  background: gitHubColors.bgBackdrop,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
+  dropBackground: "#00000033",
+  foreground: gitHubColors.textPrimary,
 });
 
 const sideBarTitleTheme = createTheme("sideBarTitle", {
@@ -61,53 +66,71 @@ const sideBarTitleTheme = createTheme("sideBarTitle", {
 
 const sideBarSectionHeaderTheme = createTheme("sideBarSectionHeader", {
   background: gitHubColors.bgTertiary,
-  foreground: gitHubColors.textPrimary,
+  foreground: gitHubColors.textSecondary,
 });
 
+// List
+// ----
+
 const listTheme = createTheme("list", {
-  activeSelectionBackground: gitHubColors.bgInfo,
+  activeSelectionBackground: gitHubColors.bgTertiary,
   activeSelectionForeground: gitHubColors.textPrimary,
-  hoverBackground: gitHubColors.bgInfo,
-  inactiveSelectionBackground: gitHubColors.bgInfo,
-  inactiveSelectionForeground: gitHubColors.textPrimary,
-  errorForeground: gitHubColors.alertErrorText,
-  warningForeground: gitHubColors.alertWarnText,
-  filterMatchBackground: "#fff0",
-  filterMatchBorder: gitHubColors.alertInfoBorder,
   deemphasizedForeground: gitHubColors.textSecondary,
+  dropBackground: "#00000033",
+  errorForeground: gitHubColors.alertErrorText,
+  filterMatchBackground: gitHubColors.codeSelectionBg,
+  filterMatchBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  focusBackground: gitHubColors.bgTertiary,
+  focusForeground: gitHubColors.textPrimary,
+  highlightForeground: gitHubColors.textPrimary,
+  hoverBackground: gitHubColors.bgTertiary,
+  hoverForeground: gitHubColors.textPrimary,
+  inactiveFocusBackground: gitHubColors.bgTertiary,
+  inactiveSelectionBackground: gitHubColors.bgTertiary,
+  inactiveSelectionForeground: gitHubColors.textPrimary,
+  invalidItemForeground: gitHubColors.alertErrorText,
+  warningForeground: gitHubColors.alertWarnText,
 });
 
 const listFilterWidgetTheme = createTheme("listFilterWidget", {
   background: gitHubColors.bgInfo,
-  outline: primaryBorderFlow(gitHubColors.borderPrimary),
   noMatchesOutline: primaryBorderFlow(gitHubColors.borderPrimary),
+  outline: primaryBorderFlow(gitHubColors.borderPrimary),
 });
 
 const treeTheme = createTheme("tree", {
   indentGuidesStroke: primaryBorderFlow(gitHubColors.borderPrimary),
 });
 
-const editorGroupTheme = createTheme("editorGroup", {
-  emptyBackground: gitHubColors.bgPrimary,
+// Status bar
+// ----------
+
+const statusBarTheme = createTheme("statusBar", {
+  background: gitHubColors.bgInfo,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
+  debuggingBackground: gitHubColors.bgInfo,
+  debuggingBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  debuggingForeground: gitHubColors.textPrimary,
+  foreground: gitHubColors.textPrimary,
+  noFolderBackground: gitHubColors.bgInfo,
+  noFolderBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  noFolderForeground: gitHubColors.textPrimary,
 });
 
-const editorGroupHeaderTheme = createTheme("editorGroupHeader", {
-  noTabsBackground: gitHubColors.bgPrimary,
-  tabsBackground: gitHubColors.bgPrimary,
-  tabsBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-  border: primaryBorderFlow(gitHubColors.borderPrimary),
+const statusBarItemTheme = createTheme("statusBarItem", {
+  activeBackground: "#ffffff1a",
+  errorBackground: gitHubColors.alertErrorBg,
+  errorForeground: gitHubColors.alertErrorText,
+  hoverBackground: "#ffffff1a",
+  prominentBackground: "#00000000",
+  prominentForeground: gitHubColors.textPrimary,
+  prominentHoverBackground: "#00000000",
+  remoteBackground: "#00000000",
+  remoteForeground: gitHubColors.textPrimary,
 });
 
-const tabTheme = createTheme("tab", {
-  activeBackground: gitHubColors.bgTertiary,
-  activeForeground: gitHubColors.textPrimary,
-  activeBorder: gitHubColors.autoOrange6,
-  inactiveBackground: gitHubColors.bgPrimary,
-  inactiveForeground: gitHubColors.textSecondary,
-  hoverBackground: gitHubColors.bgTertiary,
-  hoverForeground: gitHubColors.textPrimary,
-});
+// Terminal
+// --------
 
 const terminalTheme = createTheme("terminal", {
   ansiBlack: gitHubColors.ansiBlack,
@@ -127,6 +150,242 @@ const terminalTheme = createTheme("terminal", {
   ansiWhite: gitHubColors.ansiWhite,
   ansiYellow: gitHubColors.ansiYellow,
 });
+
+// Editor groups & tabs
+// -------------------
+
+const editorGroupTheme = createTheme("editorGroup", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  dropBackground: "#00000066",
+  emptyBackground: gitHubColors.bgPrimary,
+  focusedEmptyBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const editorGroupHeaderTheme = createTheme("editorGroupHeader", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  noTabsBackground: gitHubColors.bgPrimary,
+  tabsBackground: gitHubColors.bgPrimary,
+  tabsBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const tabTheme = createTheme("tab", {
+  activeBackground: gitHubColors.bgTertiary,
+  activeBorder: gitHubColors.autoOrange6,
+  activeBorderTop: "#00000000",
+  activeForeground: gitHubColors.textPrimary,
+  activeModifiedBorder: "#00000000",
+  border: "#00000000",
+  hoverBackground: gitHubColors.bgTertiary,
+  hoverBorder: "#00000000",
+  hoverForeground: gitHubColors.textPrimary,
+  inactiveBackground: gitHubColors.bgPrimary,
+  inactiveForeground: gitHubColors.autoGray5,
+  inactiveModifiedBorder: "#00000000",
+  lastPinnedBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+
+  // These will default to the focused ones
+
+  // unfocusedActiveBackground: "",
+  // unfocusedActiveBorder: "",
+  // unfocusedActiveBorderTop: "",
+  // unfocusedActiveForeground: "",
+  // unfocusedActiveModifiedBorder: "",
+  // unfocusedHoverBackground: "",
+  // unfocusedHoverBorder: "",
+  // unfocusedHoverForeground: "",
+  // unfocusedInactiveBackground: "",
+  // unfocusedInactiveForeground: "",
+  // unfocusedInactiveModifiedBorder: "",
+});
+
+// Minimap
+// -------
+
+const minimapTheme = createTheme("minimap", {
+  background: gitHubColors.bgTertiary,
+  errorHighlight: gitHubColors.alertErrorBorder,
+  findMatchHighlight: gitHubColors.alertInfoBorder,
+  selectionHighlight: gitHubColors.alertInfoBorder,
+  warningHighlight: gitHubColors.alertWarnBorder,
+});
+
+const minimapSliderTheme = createTheme("minimapSlider", {
+  activeBackground: "#ffffff18",
+  background: "#ffffff10",
+  hoverBackground: "#ffffff18",
+});
+
+const minimapGutterTheme = createTheme("minimapGutter", {
+  addedBackground: gitHubColors.diffstatAdditionBg,
+  deletedBackground: gitHubColors.diffstatDeletionBg,
+  modifiedBackground: gitHubColors.diffstatNeutralBg,
+});
+
+// Buttons
+// -------
+
+const buttonTheme = createTheme("button", {
+  background: gitHubColors.btnPrimaryBg,
+  foreground: gitHubColors.btnText,
+  hoverBackground: gitHubColors.btnPrimaryHoverBg,
+  secondaryBackground: gitHubColors.btnBg,
+  secondaryForeground: gitHubColors.btnText,
+  secondaryHoverBackground: gitHubColors.btnHoverBg,
+});
+
+// Checkboxes
+// ----------
+
+const checkboxTheme = createTheme("checkbox", {
+  background: gitHubColors.btnBg,
+  border: gitHubColors.btnBorder,
+  foreground: gitHubColors.btnText,
+});
+
+// Inputs
+// ------
+
+const inputTheme = createTheme("input", {
+  background: gitHubColors.inputBg,
+  border: gitHubColors.inputBorder,
+  foreground: gitHubColors.textPrimary,
+  placeholderForeground: gitHubColors.textPlaceholder,
+});
+
+const inputOptionTheme = createTheme("inputOption", {
+  activeBackground: gitHubColors.boxBgInfo,
+  activeBorder: gitHubColors.boxBorderInfo,
+  activeForeground: gitHubColors.textPrimary,
+});
+
+const inputValidationTheme = createTheme("inputValidation", {
+  errorBackground: gitHubColors.inputTooltipErrorBg,
+  errorBorder: gitHubColors.inputTooltipErrorBorder,
+  errorForeground: gitHubColors.inputTooltipErrorText,
+  infoBackground: gitHubColors.inputBg,
+  infoBorder: gitHubColors.inputBorder,
+  infoForeground: gitHubColors.textPrimary,
+  warningBackground: gitHubColors.inputTooltipWarningBg,
+  warningBorder: gitHubColors.inputTooltipWarningBorder,
+  warningForeground: gitHubColors.inputTooltipWarningText,
+});
+
+// Dropdowns
+// ---------
+
+const dropdownTheme = createTheme("dropdown", {
+  background: gitHubColors.inputBg,
+  border: gitHubColors.inputBorder,
+  foreground: gitHubColors.textPrimary,
+  listBackground: gitHubColors.inputBg,
+});
+
+// Panels
+// ------
+
+const panelTheme = createTheme("panel", {
+  background: gitHubColors.bgPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  dropBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const panelTitleTheme = createTheme("panelTitle", {
+  activeBorder: gitHubColors.autoOrange6,
+  activeForeground: gitHubColors.textPrimary,
+  inactiveForeground: gitHubColors.textSecondary,
+});
+
+const panelInputTheme = createTheme("panelInput", {
+  border: gitHubColors.inputBorder,
+});
+
+const panelSectionTheme = createTheme("panelSection", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  dropBackground: "#00000033",
+});
+
+const panelSectionHeader = createTheme("panelSectionHeader", {
+  background: gitHubColors.bgPrimary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  foreground: gitHubColors.textPrimary,
+});
+
+// Breadcrumbs
+// -----------
+
+const breadcrumbTheme = createTheme("breadcrumb", {
+  activeSelectionForeground: gitHubColors.textPrimary,
+  background: gitHubColors.bgPrimary,
+  focusForeground: gitHubColors.textPrimary,
+  foreground: gitHubColors.textSecondary,
+});
+
+const breadcrumbPickerTheme = createTheme("breadcrumbPicker", {
+  background: gitHubColors.bgTertiary,
+});
+
+// Text colors
+// -----------
+
+const textBlockQuoteTheme = createTheme("textBlockQuote", {
+  background: gitHubColors.bgTertiary,
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const textCodeBlockTheme = createTheme("textCodeBlock", {
+  background: gitHubColors.bgTertiary,
+});
+
+const textLinkTheme = createTheme("textLink", {
+  activeForeground: gitHubColors.textLink,
+  foreground: gitHubColors.textLink,
+});
+
+const textPreformatTheme = createTheme("textPreformat", {
+  foreground: gitHubColors.textPrimary,
+});
+
+const textSeparatorTheme = createTheme("textSeparator", {
+  foreground: gitHubColors.textPrimary,
+});
+
+// Scrollbar
+// ---------
+
+const scrollbarTheme = createTheme("scrollbar", {
+  shadow: "#00000000",
+});
+
+const scrollbarSliderTheme = createTheme("scrollbarSlider", {
+  activeBackground: gitHubColors.autoGray3,
+  background: gitHubColors.autoGray2,
+  hoverBackground: gitHubColors.autoGray3,
+});
+
+// Badges
+// ------
+
+const badgeTheme = createTheme("badge", {
+  background: gitHubColors.counterBg,
+  foreground: gitHubColors.counterText,
+});
+
+// Welcome page
+// ------------
+
+const welcomePageTheme = createTheme("welcomePage", {
+  background: gitHubColors.bgPrimary,
+  buttonBackground: gitHubColors.bgTertiary,
+  buttonHoverBackground: gitHubColors.autoGray2,
+});
+
+const walkThroughTheme = createTheme("walkThrough", {
+  embeddedEditorBackground: gitHubColors.bgBackdrop,
+});
+
+//
+// ---
+//
 
 const editorTheme = createTheme("editor", {
   background: gitHubColors.bgPrimary,
@@ -274,74 +533,633 @@ async function main(): Promise<void> {
         type: "dark",
         semanticHighlighting: true,
         colors: {
-          ...titleBarTheme,
-          ...activityBarTheme,
+          // Base colors
+          // -----------
+
+          descriptionForeground: gitHubColors.textSecondary,
+          errorForeground: gitHubColors.alertErrorText,
+          focusBorder: gitHubColors.stateFocusBorder,
+          foreground: gitHubColors.textPrimary,
+
+          "icon.foreground": gitHubColors.iconPrimary,
+          "sash.hoverBorder": gitHubColors.borderInfo,
+          "selection.background": gitHubColors.codeSelectionBg,
+          "widget.shadow": "#00000000",
+
           ...activityBarBadgeTheme,
-          ...statusBarTheme,
+          ...activityBarTheme,
+          ...badgeTheme,
+          ...breadcrumbPickerTheme,
+          ...breadcrumbTheme,
+          ...buttonTheme,
+          ...checkboxTheme,
+          ...dropdownTheme,
+          ...editorGroupHeaderTheme,
+          ...editorGroupTheme,
+          ...inputOptionTheme,
+          ...inputTheme,
+          ...inputValidationTheme,
+          ...listFilterWidgetTheme,
+          ...listTheme,
+          ...minimapGutterTheme,
+          ...minimapSliderTheme,
+          ...minimapTheme,
+          ...panelInputTheme,
+          ...panelSectionHeader,
+          ...panelSectionTheme,
+          ...panelTheme,
+          ...panelTitleTheme,
+          ...scrollbarSliderTheme,
+          ...scrollbarTheme,
+          ...sideBarSectionHeaderTheme,
           ...sideBarTheme,
           ...sideBarTitleTheme,
-          ...sideBarSectionHeaderTheme,
-          ...listTheme,
-          ...listFilterWidgetTheme,
-          ...treeTheme,
-          ...editorGroupTheme,
-          ...editorGroupHeaderTheme,
+          ...statusBarItemTheme,
+          ...statusBarTheme,
           ...tabTheme,
           ...terminalTheme,
-          ...editorTheme,
-          ...editorGutterTheme,
-          ...editorLineNumberTheme,
-          ...editorIndentGuideTheme,
-          ...editorCursorTheme,
-          ...editorRulerTheme,
-          ...editorOverviewRulerTheme,
+          ...textBlockQuoteTheme,
+          ...textCodeBlockTheme,
+          ...textLinkTheme,
+          ...textPreformatTheme,
+          ...textSeparatorTheme,
+          ...titleBarTheme,
+          ...treeTheme,
+          ...walkThroughTheme,
+          ...welcomePageTheme,
+
+          "pickerGroup.border": primaryBorderFlow(gitHubColors.borderPrimary),
+          "pickerGroup.foreground": gitHubColors.textPrimary,
+          "quickInput.background": gitHubColors.bgTertiary,
+          "quickInput.foreground": gitHubColors.textPrimary,
+          "quickInputTitle.background": "",
+
           ...diffEditorTheme,
-          ...editorWidgetTheme,
+          ...editorCursorTheme,
+          ...editorGutterTheme,
+          ...editorIndentGuideTheme,
+          ...editorLineNumberTheme,
+          ...editorOverviewRulerTheme,
+          ...editorRulerTheme,
           ...editorSuggestWidgetTheme,
-          ...peekViewTheme,
-          ...peekViewEditorTheme,
+          ...editorTheme,
+          ...editorWidgetTheme,
           ...peekViewEditorGutterTheme,
+          ...peekViewEditorTheme,
           ...peekViewResultTheme,
-          ...peekViewTitleTheme,
-          ...peekViewTitleLabelTheme,
+          ...peekViewTheme,
           ...peekViewTitleDescriptionTheme,
-
-          // Base colors
-          foreground: gitHubColors.textPrimary,
-          "icon.foreground": gitHubColors.textPrimary,
-
-          // Button
-          "button.background": gitHubColors.stateSelectedPrimaryBg,
-          "button.foreground": gitHubColors.stateSelectedPrimaryText,
-          "button.secondaryForeground": gitHubColors.btnBg,
-          "button.secondaryBackground": gitHubColors.btnText,
-          "checkbox.background": gitHubColors.btnBg,
-          "checkbox.foreground": gitHubColors.btnText,
-          "checkbox.border": gitHubColors.btnBorder,
-
-          // Input
-          "input.background": gitHubColors.bgTertiary,
-          "input.border": gitHubColors.inputBorder,
-          "input.foreground": gitHubColors.textPrimary,
-          "input.placeholderForeground": gitHubColors.textSecondary,
-          "inputOption.activeBorder": gitHubColors.borderSecondary,
-          "inputOption.activeForeground": gitHubColors.textPrimary,
-
-          // Panel
-          "panel.background": gitHubColors.bgPrimary,
-          "panel.border": gitHubColors.borderPrimary,
-          "panelSection.border": gitHubColors.borderPrimary,
-          "panelTitle.activeBorder": gitHubColors.autoOrange5,
-          "panelTitle.activeForeground": gitHubColors.textPrimary,
-          "panelTitle.inactiveForeground": gitHubColors.textSecondary,
-
-          // Breadcrumb
-          "breadcrumb.background": gitHubColors.bgPrimary,
-          "breadcrumb.foreground": gitHubColors.textSecondary,
-          "breadcrumb.focusForeground": gitHubColors.textPrimary,
-          "breadcrumb.activeSelectionForeground": gitHubColors.textPrimary,
-          "breadcrumbPicker.background": gitHubColors.bgPrimary,
+          ...peekViewTitleLabelTheme,
+          ...peekViewTitleTheme,
         },
+        tokenColors: [
+          {
+            name: "Comment",
+            scope: ["comment", "punctuation.definition.comment"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxComment,
+            },
+          },
+          {
+            name: "Variables",
+            scope: ["variable", "string constant.other.placeholder"],
+            settings: {
+              foreground: gitHubColors.textPrimary,
+            },
+          },
+          {
+            name: "Colors",
+            scope: ["constant.other.color"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            name: "Invalid",
+            scope: ["invalid", "invalid.illegal"],
+            settings: {
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "Keyword, Storage",
+            scope: ["keyword", "storage.type", "storage.modifier"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxKeyword,
+            },
+          },
+          {
+            name: "Operator, Misc",
+            scope: [
+              "keyword.control",
+              "constant.other.color",
+              "meta.tag",
+              "punctuation.definition.tag",
+              "punctuation.separator.inheritance.php",
+              "punctuation.definition.tag.html",
+              "punctuation.definition.tag.begin.html",
+              "punctuation.definition.tag.end.html",
+              "punctuation.section.embedded",
+              "keyword.other.template",
+              "keyword.other.substitution",
+            ],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxKeyword,
+            },
+          },
+          {
+            name: "Punctuation",
+            scope: ["punctuation"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxString,
+            },
+          },
+          {
+            name: "Tag",
+            scope: [
+              "entity.name.tag",
+              "meta.tag.sgml",
+              "markup.deleted.git_gutter",
+            ],
+            settings: {
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "Function, Special Method",
+            scope: [
+              "entity.name.function",
+              "meta.function-call",
+              "variable.function",
+              "support.function",
+              "keyword.other.special-method",
+            ],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxEntity,
+            },
+          },
+          {
+            name: "Block Level Variables",
+            scope: ["meta.block variable.other"],
+            settings: {
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "Other Variable, String Link",
+            scope: ["support.other.variable", "string.other.link"],
+            settings: {
+              foreground: "#f07178",
+            },
+          },
+          {
+            name:
+              "Number, Constant, Function Argument, Tag Attribute, Embedded",
+            scope: [
+              "constant.numeric",
+              "constant.language",
+              "support.constant",
+              "constant.character",
+              "constant.escape",
+              "variable.parameter",
+              "keyword.other.unit",
+              "keyword.other",
+            ],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            name: "String, Symbols, Inherited Class, Markup Heading",
+            scope: [
+              "string",
+              "constant.other.symbol",
+              "constant.other.key",
+              "entity.other.inherited-class",
+              "markup.heading",
+              "markup.inserted.git_gutter",
+              "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js",
+            ],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxString,
+            },
+          },
+          {
+            name: "Class, Support",
+            scope: [
+              "entity.name",
+              "support.type",
+              "support.class",
+              "support.orther.namespace.use.php",
+              "meta.use.php",
+              "support.other.namespace.php",
+              "markup.changed.git_gutter",
+              "support.type.sys-types",
+            ],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxVariable,
+            },
+          },
+          {
+            name: "Entity Types",
+            scope: ["support.type"],
+            settings: {
+              foreground: "#B2CCD6",
+            },
+          },
+          {
+            name: "CSS Class and Support",
+            scope: [
+              "source.css support.type.property-name",
+              "source.sass support.type.property-name",
+              "source.scss support.type.property-name",
+              "source.less support.type.property-name",
+              "source.stylus support.type.property-name",
+              "source.postcss support.type.property-name",
+            ],
+            settings: {
+              foreground: "#B2CCD6",
+            },
+          },
+          {
+            name: "Sub-methods",
+            scope: [
+              "entity.name.module.js",
+              "variable.import.parameter.js",
+              "variable.other.class.js",
+            ],
+            settings: {
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "Language methods",
+            scope: ["variable.language"],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "entity.name.method.js",
+            scope: ["entity.name.method.js"],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "meta.method.js",
+            scope: [
+              "meta.class-method.js entity.name.function.js",
+              "variable.function.constructor",
+            ],
+            settings: {
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "Attributes",
+            scope: ["entity.other.attribute-name"],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "HTML Attributes",
+            scope: [
+              "text.html.basic entity.other.attribute-name.html",
+              "text.html.basic entity.other.attribute-name",
+            ],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#FFCB6B",
+            },
+          },
+          {
+            name: "CSS Classes",
+            scope: ["entity.other.attribute-name.class"],
+            settings: {
+              foreground: "#FFCB6B",
+            },
+          },
+          {
+            name: "CSS ID's",
+            scope: ["source.sass keyword.control"],
+            settings: {
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "Inserted",
+            scope: ["markup.inserted"],
+            settings: {
+              foreground: "#C3E88D",
+            },
+          },
+          {
+            name: "Deleted",
+            scope: ["markup.deleted"],
+            settings: {
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "Changed",
+            scope: ["markup.changed"],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "Regular Expressions",
+            scope: ["string.regexp"],
+            settings: {
+              foreground: "#89DDFF",
+            },
+          },
+          {
+            name: "Escape Characters",
+            scope: ["constant.character.escape"],
+            settings: {
+              foreground: "#89DDFF",
+            },
+          },
+          {
+            name: "URL",
+            scope: ["*url*", "*link*", "*uri*"],
+            settings: {
+              fontStyle: "underline",
+            },
+          },
+          {
+            name: "Decorators",
+            scope: [
+              "tag.decorator.js entity.name.tag.js",
+              "tag.decorator.js punctuation.definition.tag.js",
+            ],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "ES7 Bind Operator",
+            scope: [
+              "source.js constant.other.object.key.js string.unquoted.label.js",
+            ],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "JSON Key - Level 0",
+            scope: [
+              "source.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "JSON Key - Level 1",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#FFCB6B",
+            },
+          },
+          {
+            name: "JSON Key - Level 2",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#F78C6C",
+            },
+          },
+          {
+            name: "JSON Key - Level 3",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#FF5370",
+            },
+          },
+          {
+            name: "JSON Key - Level 4",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#C17E70",
+            },
+          },
+          {
+            name: "JSON Key - Level 5",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "JSON Key - Level 6",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "JSON Key - Level 7",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "JSON Key - Level 8",
+            scope: [
+              "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json",
+            ],
+            settings: {
+              foreground: "#C3E88D",
+            },
+          },
+          {
+            name: "Markdown - Plain",
+            scope: [
+              "text.html.markdown",
+              "punctuation.definition.list_item.markdown",
+            ],
+            settings: {
+              foreground: "#EEFFFF",
+            },
+          },
+          {
+            name: "Markdown - Markup Raw Inline",
+            scope: ["text.html.markdown markup.inline.raw.markdown"],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "Markdown - Markup Raw Inline Punctuation",
+            scope: [
+              "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown",
+            ],
+            settings: {
+              foreground: "#65737E",
+            },
+          },
+          {
+            name: "Markdown - Heading",
+            scope: [
+              "markdown.heading",
+              "markup.heading | markup.heading entity.name",
+              "markup.heading.markdown punctuation.definition.heading.markdown",
+            ],
+            settings: {
+              foreground: "#C3E88D",
+            },
+          },
+          {
+            name: "Markup - Italic",
+            scope: ["markup.italic"],
+            settings: {
+              fontStyle: "italic",
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "Markup - Bold",
+            scope: ["markup.bold", "markup.bold string"],
+            settings: {
+              fontStyle: "bold",
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "Markup - Bold-Italic",
+            scope: [
+              "markup.bold markup.italic",
+              "markup.italic markup.bold",
+              "markup.quote markup.bold",
+              "markup.bold markup.italic string",
+              "markup.italic markup.bold string",
+              "markup.quote markup.bold string",
+            ],
+            settings: {
+              fontStyle: "bold",
+              foreground: "#f07178",
+            },
+          },
+          {
+            name: "Markup - Underline",
+            scope: ["markup.underline"],
+            settings: {
+              fontStyle: "underline",
+              foreground: "#F78C6C",
+            },
+          },
+          {
+            name: "Markdown - Blockquote",
+            scope: ["markup.quote punctuation.definition.blockquote.markdown"],
+            settings: {
+              foreground: "#65737E",
+            },
+          },
+          {
+            name: "Markup - Quote",
+            scope: ["markup.quote"],
+            settings: {
+              fontStyle: "italic",
+            },
+          },
+          {
+            name: "Markdown - Link",
+            scope: ["string.other.link.title.markdown"],
+            settings: {
+              foreground: "#82AAFF",
+            },
+          },
+          {
+            name: "Markdown - Link Description",
+            scope: ["string.other.link.description.title.markdown"],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "Markdown - Link Anchor",
+            scope: ["constant.other.reference.link.markdown"],
+            settings: {
+              foreground: "#FFCB6B",
+            },
+          },
+          {
+            name: "Markup - Raw Block",
+            scope: ["markup.raw.block"],
+            settings: {
+              foreground: "#C792EA",
+            },
+          },
+          {
+            name: "Markdown - Raw Block Fenced",
+            scope: ["markup.raw.block.fenced.markdown"],
+            settings: {
+              foreground: "#00000050",
+            },
+          },
+          {
+            name: "Markdown - Fenced Bode Block",
+            scope: ["punctuation.definition.fenced.markdown"],
+            settings: {
+              foreground: "#00000050",
+            },
+          },
+          {
+            name: "Markdown - Fenced Bode Block Variable",
+            scope: [
+              "markup.raw.block.fenced.markdown",
+              "variable.language.fenced.markdown",
+              "punctuation.section.class.end",
+            ],
+            settings: {
+              foreground: "#EEFFFF",
+            },
+          },
+          {
+            name: "Markdown - Fenced Language",
+            scope: ["variable.language.fenced.markdown"],
+            settings: {
+              foreground: "#65737E",
+            },
+          },
+          {
+            name: "Markdown - Separator",
+            scope: ["meta.separator"],
+            settings: {
+              fontStyle: "bold",
+              foreground: "#65737E",
+            },
+          },
+          {
+            name: "Markup - Table",
+            scope: ["markup.table"],
+            settings: {
+              foreground: "#EEFFFF",
+            },
+          },
+        ],
       },
       null,
       2
