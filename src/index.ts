@@ -520,6 +520,13 @@ const editorCursorTheme = createTheme("editorCursor", {
   foreground: gitHubColors.textPrimary,
 });
 
+const searchEditorTheme = createTheme("searchEditor", {
+  findMatchBackground: colorTextSelectionBg,
+  findMatchBorder: colorTextSelectionBorder,
+
+  // textInputBorder: "",
+});
+
 const editorOverviewRulerTheme = createTheme("editorOverviewRuler", {
   background: gitHubColors.bgTertiary,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
@@ -672,6 +679,7 @@ async function main(): Promise<void> {
           ...peekViewTitleLabelTheme,
           ...peekViewTitleTheme,
           ...editorHoverWidgetTheme,
+          ...searchEditorTheme,
           ...editorMarkerNavigationTheme,
           ...editorMarkerNavigationErrorTheme,
           ...editorMarkerNavigationWarningTheme,
