@@ -60,7 +60,7 @@ const sideBarTheme = createTheme("sideBar", {
   background: gitHubColors.bgBackdrop,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
   dropBackground: "#00000033",
-  foreground: gitHubColors.textPrimary,
+  foreground: gitHubColors.textSecondary,
 });
 
 const sideBarTitleTheme = createTheme("sideBarTitle", {
@@ -78,7 +78,7 @@ const sideBarSectionHeaderTheme = createTheme("sideBarSectionHeader", {
 const listTheme = createTheme("list", {
   activeSelectionBackground: gitHubColors.bgInfo,
   activeSelectionForeground: gitHubColors.textPrimary,
-  deemphasizedForeground: gitHubColors.textSecondary,
+  deemphasizedForeground: gitHubColors.textDisabled,
   dropBackground: "#00000033",
   errorForeground: gitHubColors.alertErrorText,
   filterMatchBackground: colorTextSelectionBg,
@@ -481,6 +481,7 @@ const editorTheme = createTheme("editor", {
   findMatchBackground: colorTextSelectionBg,
   findMatchBorder: colorTextSelectionBorder,
   findMatchHighlightBackground: colorTextSelectionBg,
+  findMatchHighlightBorder: colorTextSelectionBorder,
   findRangeHighlightBackground: gitHubColors.bgInfo,
   foldBackground: gitHubColors.bgInfo,
   foreground: gitHubColors.textPrimary,
@@ -497,7 +498,6 @@ const editorTheme = createTheme("editor", {
   wordHighlightBackground: colorTextSelectionBg,
   wordHighlightStrongBackground: colorTextSelectionBg,
 
-  // findMatchHighlightBorder: "",
   // findRangeHighlightBorder: "",
   // linkedEditingBackground: "",
   // rangeHighlightBorder: "",
@@ -510,7 +510,7 @@ const editorGutterTheme = createTheme("editorGutter", {
   addedBackground: gitHubColors.diffAdditionBorder,
   background: gitHubColors.bgPrimary,
   deletedBackground: gitHubColors.diffDeletionBorder,
-  foldingControlForeground: gitHubColors.textTertiary,
+  foldingControlForeground: gitHubColors.textSecondary,
   modifiedBackground: gitHubColors.diffChangeBorder,
 
   // commentRangeForeground: "",
