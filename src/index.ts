@@ -415,6 +415,44 @@ const editorOverviewRulerMergeTheme = createTheme("editorOverviewRuler", {
   commonContentForeground: gitHubColors.bgInfo,
 });
 
+// Peek view
+// ---------
+
+const peekViewTheme = createTheme("peekView", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+});
+
+const peekViewEditorTheme = createTheme("peekViewEditor", {
+  background: gitHubColors.bgInfo,
+  matchHighlightBackground: "#153051",
+  matchHighlightBorder: gitHubColors.codeSelectionBg,
+});
+
+const peekViewEditorGutterTheme = createTheme("peekViewEditorGutter", {
+  background: gitHubColors.bgInfo,
+});
+
+const peekViewResultTheme = createTheme("peekViewResult", {
+  background: gitHubColors.bgInfo,
+  fileForeground: gitHubColors.textPrimary,
+  lineForeground: gitHubColors.textPrimary,
+  matchHighlightBackground: "#153051",
+  selectionBackground: "#153051",
+  selectionForeground: gitHubColors.textPrimary,
+});
+
+const peekViewTitleTheme = createTheme("peekViewTitle", {
+  background: gitHubColors.bgTertiary,
+});
+
+const peekViewTitleLabelTheme = createTheme("peekViewTitleLabel", {
+  foreground: gitHubColors.textPrimary,
+});
+
+const peekViewTitleDescriptionTheme = createTheme("peekViewTitleDescription", {
+  foreground: gitHubColors.textSecondary,
+});
+
 //
 // ---
 //
@@ -511,40 +549,6 @@ const editorSuggestWidgetTheme = createTheme("editorSuggestWidget", {
   selectedBackground: gitHubColors.bgInfo,
 });
 
-const peekViewTheme = createTheme("peekView", {
-  border: primaryBorderFlow(gitHubColors.borderPrimary),
-});
-
-const peekViewEditorTheme = createTheme("peekViewEditor", {
-  background: gitHubColors.bgTertiary,
-  matchHighlightBackground: gitHubColors.codeSelectionBg,
-});
-
-const peekViewEditorGutterTheme = createTheme("peekViewEditorGutter", {
-  background: gitHubColors.bgTertiary,
-});
-
-const peekViewResultTheme = createTheme("peekViewResult", {
-  background: gitHubColors.bgTertiary,
-  fileForeground: gitHubColors.textPrimary,
-  lineForeground: gitHubColors.textPrimary,
-  matchHighlightBackground: gitHubColors.codeSelectionBg,
-  selectionBackground: gitHubColors.codeSelectionBg,
-  selectionForeground: gitHubColors.textPrimary,
-});
-
-const peekViewTitleTheme = createTheme("peekViewTitle", {
-  background: gitHubColors.bgInfo,
-});
-
-const peekViewTitleLabelTheme = createTheme("peekViewTitleLabel", {
-  foreground: gitHubColors.textSecondary,
-});
-
-const peekViewTitleDescriptionTheme = createTheme("peekViewTitleDescription", {
-  foreground: gitHubColors.textPrimary,
-});
-
 // Theme file
 // ==========
 
@@ -616,6 +620,13 @@ async function main(): Promise<void> {
           ...diffEditorTheme,
           ...mergeTheme,
           ...editorOverviewRulerMergeTheme,
+          ...peekViewEditorGutterTheme,
+          ...peekViewEditorTheme,
+          ...peekViewResultTheme,
+          ...peekViewTheme,
+          ...peekViewTitleDescriptionTheme,
+          ...peekViewTitleLabelTheme,
+          ...peekViewTitleTheme,
 
           "pickerGroup.border": primaryBorderFlow(gitHubColors.borderPrimary),
           "pickerGroup.foreground": gitHubColors.textPrimary,
@@ -632,13 +643,6 @@ async function main(): Promise<void> {
           ...editorSuggestWidgetTheme,
           ...editorTheme,
           ...editorWidgetTheme,
-          ...peekViewEditorGutterTheme,
-          ...peekViewEditorTheme,
-          ...peekViewResultTheme,
-          ...peekViewTheme,
-          ...peekViewTitleDescriptionTheme,
-          ...peekViewTitleLabelTheme,
-          ...peekViewTitleTheme,
         },
         tokenColors: [
           {
