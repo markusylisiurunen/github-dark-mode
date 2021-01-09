@@ -81,7 +81,7 @@ const listTheme = createTheme("list", {
   deemphasizedForeground: gitHubColors.textSecondary,
   dropBackground: "#00000033",
   errorForeground: gitHubColors.alertErrorText,
-  filterMatchBackground: gitHubColors.codeSelectionBg,
+  filterMatchBackground: colorTextSelectionBg,
   filterMatchBorder: primaryBorderFlow(gitHubColors.borderPrimary),
   focusBackground: gitHubColors.bgInfo,
   focusForeground: gitHubColors.textPrimary,
@@ -427,8 +427,8 @@ const peekViewTheme = createTheme("peekView", {
 
 const peekViewEditorTheme = createTheme("peekViewEditor", {
   background: gitHubColors.bgInfo,
-  matchHighlightBackground: "#153051",
-  matchHighlightBorder: gitHubColors.codeSelectionBg,
+  matchHighlightBackground: colorTextSelectionBg,
+  matchHighlightBorder: colorTextSelectionBorder,
 });
 
 const peekViewEditorGutterTheme = createTheme("peekViewEditorGutter", {
@@ -479,7 +479,7 @@ const quickInputTitleTheme = createTheme("quickInputTitle", {
 const editorTheme = createTheme("editor", {
   background: gitHubColors.bgPrimary,
   findMatchBackground: colorTextSelectionBg,
-  findMatchBorder: gitHubColors.codeSelectionBg,
+  findMatchBorder: colorTextSelectionBorder,
   findMatchHighlightBackground: colorTextSelectionBg,
   findRangeHighlightBackground: gitHubColors.bgInfo,
   foldBackground: gitHubColors.bgInfo,
@@ -695,17 +695,14 @@ async function main(): Promise<void> {
         type: "dark",
         semanticHighlighting: true,
         colors: {
-          // Base colors
-          // -----------
-
-          descriptionForeground: gitHubColors.textSecondary,
-          errorForeground: gitHubColors.alertErrorText,
-          focusBorder: gitHubColors.stateFocusBorder,
           foreground: gitHubColors.textPrimary,
+          focusBorder: gitHubColors.stateFocusBorder,
+          errorForeground: gitHubColors.alertErrorText,
+          descriptionForeground: gitHubColors.textSecondary,
 
           "icon.foreground": gitHubColors.iconPrimary,
           "sash.hoverBorder": gitHubColors.borderInfo,
-          "selection.background": gitHubColors.codeSelectionBg,
+          "selection.background": colorTextSelectionBg,
           "widget.shadow": "#00000000",
 
           ...activityBarBadgeTheme,
