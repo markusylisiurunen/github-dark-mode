@@ -6,6 +6,9 @@ import { multiplyTransparencyBy } from "./util";
 
 import gitHubColors from "./github-colors";
 
+const colorTextSelectionBg = "#153051";
+const colorTextSelectionBorder = gitHubColors.codeSelectionBg;
+
 function createTheme(prefix: string, colors: Record<string, string>) {
   return Object.entries(colors).reduce(
     (acc, [key, color]) => ({ ...acc, [`${prefix}.${key}`]: color }),
@@ -453,101 +456,142 @@ const peekViewTitleDescriptionTheme = createTheme("peekViewTitleDescription", {
   foreground: gitHubColors.textSecondary,
 });
 
-//
-// ---
-//
+// Editor
+// ------
 
 const editorTheme = createTheme("editor", {
   background: gitHubColors.bgPrimary,
+  findMatchBackground: colorTextSelectionBg,
+  findMatchBorder: gitHubColors.codeSelectionBg,
+  findMatchHighlightBackground: colorTextSelectionBg,
+  findRangeHighlightBackground: gitHubColors.bgInfo,
+  foldBackground: gitHubColors.bgInfo,
   foreground: gitHubColors.textPrimary,
-
-  selectionBackground: gitHubColors.codeSelectionBg,
-  inactiveSelectionBackground: gitHubColors.codeSelectionBg,
-  selectionHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
-    gitHubColors.codeSelectionBg
-  ),
-  selectionHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-
-  wordHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
-    gitHubColors.codeSelectionBg
-  ),
-  wordHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-  wordHighlightStrongBackground: _flow([multiplyTransparencyBy(0.5)])(
-    gitHubColors.codeSelectionBg
-  ),
-  wordHighlightStrongBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-
-  findMatchBackground: gitHubColors.codeSelectionBg,
-  findMatchHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
-    gitHubColors.codeSelectionBg
-  ),
-  findRangeHighlightBackground: _flow([multiplyTransparencyBy(0.5)])(
-    gitHubColors.codeSelectionBg
-  ),
-  findMatchHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-  findRangeHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
-
-  hoverHighlightBackground: gitHubColors.bgTertiary,
-
+  hoverHighlightBackground: colorTextSelectionBg,
+  inactiveSelectionBackground: colorTextSelectionBg,
   lineHighlightBackground: gitHubColors.bgInfo,
-  lineHighlightBorder: _flow([multiplyTransparencyBy(0.1)])(
-    gitHubColors.autoBlue9
-  ),
+  lineHighlightBorder: primaryBorderFlow(gitHubColors.borderPrimary),
+  rangeHighlightBackground: gitHubColors.bgInfo,
+  selectionBackground: colorTextSelectionBg,
+  selectionForeground: gitHubColors.textPrimary,
+  selectionHighlightBackground: colorTextSelectionBg,
+  symbolHighlightBackground: colorTextSelectionBg,
+  symbolHighlightBorder: colorTextSelectionBorder,
+  wordHighlightBackground: colorTextSelectionBg,
+  wordHighlightStrongBackground: colorTextSelectionBg,
+
+  // findMatchHighlightBorder: "",
+  // findRangeHighlightBorder: "",
+  // linkedEditingBackground: "",
+  // rangeHighlightBorder: "",
+  // selectionHighlightBorder: "",
+  // wordHighlightBorder: "",
+  // wordHighlightStrongBorder: "",
 });
 
 const editorGutterTheme = createTheme("editorGutter", {
-  modifiedBackground: gitHubColors.diffstatNeutralBg,
-  addedBackground: gitHubColors.diffstatAdditionBg,
-  deletedBackground: gitHubColors.diffstatDeletionBg,
-  foldingControlForeground: gitHubColors.textPrimary,
+  addedBackground: gitHubColors.diffAdditionBorder,
+  background: gitHubColors.bgPrimary,
+  deletedBackground: gitHubColors.diffDeletionBorder,
+  foldingControlForeground: gitHubColors.textTertiary,
+  modifiedBackground: gitHubColors.diffChangeBorder,
+
+  // commentRangeForeground: "",
 });
 
 const editorLineNumberTheme = createTheme("editorLineNumber", {
-  foreground: gitHubColors.diffBlobNumText,
   activeForeground: gitHubColors.diffBlobNumHoverText,
-});
-
-const editorIndentGuideTheme = createTheme("editorIndentGuide", {
-  background: gitHubColors.diffstatNeutralBorder,
-  activeBackground: gitHubColors.diffstatNeutralBorder,
-});
-
-const editorCursorTheme = createTheme("editorCursor", {
-  background: gitHubColors.bgInfo,
-  foreground: gitHubColors.textPrimary,
+  foreground: gitHubColors.diffBlobNumText,
 });
 
 const editorRulerTheme = createTheme("editorRuler", {
   foreground: gitHubColors.diffstatNeutralBorder,
 });
 
+const editorIndentGuideTheme = createTheme("editorIndentGuide", {
+  background: gitHubColors.diffstatNeutralBorder,
+  activeBackground: _flow([multiplyTransparencyBy(2)])(
+    gitHubColors.diffstatNeutralBorder
+  ),
+});
+
+const editorCursorTheme = createTheme("editorCursor", {
+  background: colorTextSelectionBg,
+  foreground: gitHubColors.textPrimary,
+});
+
 const editorOverviewRulerTheme = createTheme("editorOverviewRuler", {
   background: gitHubColors.bgTertiary,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
-  rangeHighlightForeground: gitHubColors.codeSelectionBg,
-  selectionHighlightForeground: gitHubColors.codeSelectionBg,
-  wordHighlightForeground: gitHubColors.codeSelectionBg,
-  wordHighlightStrongForeground: gitHubColors.codeSelectionBg,
-  modifiedForeground: gitHubColors.diffstatNeutralBg,
-  addedForeground: gitHubColors.diffstatAdditionBg,
-  deletedForeground: gitHubColors.diffstatDeletionBg,
-  errorForeground: gitHubColors.alertErrorBg,
-  warningForeground: gitHubColors.alertWarnBg,
-  infoForeground: gitHubColors.alertInfoBg,
-  bracketMatchForeground: gitHubColors.codeSelectionBg,
+
+  addedForeground: gitHubColors.diffAdditionBorder,
+  deletedForeground: gitHubColors.diffDeletionBorder,
+  modifiedForeground: gitHubColors.diffChangeBorder,
+
+  errorForeground: "#703132", // gitHubColors.alertErrorBorder
+  infoForeground: "#24487A", // gitHubColors.alertInfoBorder
+  warningForeground: "#584318", // gitHubColors.alertWarnBorder
+
+  findMatchForeground: colorTextSelectionBorder,
+  bracketMatchForeground: colorTextSelectionBorder,
+  rangeHighlightForeground: colorTextSelectionBorder,
+  selectionHighlightForeground: colorTextSelectionBorder,
+  wordHighlightForeground: colorTextSelectionBorder,
+  wordHighlightStrongForeground: colorTextSelectionBorder,
 });
 
 const editorWidgetTheme = createTheme("editorWidget", {
   background: gitHubColors.bgTertiary,
-  foreground: gitHubColors.textPrimary,
   border: primaryBorderFlow(gitHubColors.borderPrimary),
+  foreground: gitHubColors.textPrimary,
   resizeBorder: primaryBorderFlow(gitHubColors.borderPrimary),
 });
 
 const editorSuggestWidgetTheme = createTheme("editorSuggestWidget", {
   highlightForeground: gitHubColors.textPrimary,
   selectedBackground: gitHubColors.bgInfo,
+
+  // background: "",
+  // border: "",
+  // foreground: "",
 });
+
+const editorHoverWidgetTheme = createTheme("editorHoverWidget", {
+  statusBarBackground: gitHubColors.bgInfo,
+
+  // background: "",
+  // border: "",
+  // foreground: "",
+});
+
+const editorMarkerNavigationTheme = createTheme("editorMarkerNavigation", {
+  background: gitHubColors.bgTertiary,
+});
+
+const editorMarkerNavigationErrorTheme = createTheme(
+  "editorMarkerNavigationError",
+  {
+    background: gitHubColors.alertErrorBorder,
+  }
+);
+
+const editorMarkerNavigationWarningTheme = createTheme(
+  "editorMarkerNavigationWarning",
+  {
+    background: gitHubColors.alertWarnBorder,
+  }
+);
+
+const editorMarkerNavigationInfoTheme = createTheme(
+  "editorMarkerNavigationInfo",
+  {
+    background: gitHubColors.alertInfoBorder,
+  }
+);
+
+//
+// ---
+//
 
 // Theme file
 // ==========
@@ -627,6 +671,11 @@ async function main(): Promise<void> {
           ...peekViewTitleDescriptionTheme,
           ...peekViewTitleLabelTheme,
           ...peekViewTitleTheme,
+          ...editorHoverWidgetTheme,
+          ...editorMarkerNavigationTheme,
+          ...editorMarkerNavigationErrorTheme,
+          ...editorMarkerNavigationWarningTheme,
+          ...editorMarkerNavigationInfoTheme,
 
           "pickerGroup.border": primaryBorderFlow(gitHubColors.borderPrimary),
           "pickerGroup.foreground": gitHubColors.textPrimary,
