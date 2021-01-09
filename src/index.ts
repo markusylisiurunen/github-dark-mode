@@ -360,9 +360,9 @@ const scrollbarTheme = createTheme("scrollbar", {
 });
 
 const scrollbarSliderTheme = createTheme("scrollbarSlider", {
-  activeBackground: gitHubColors.autoGray3,
-  background: gitHubColors.autoGray2,
-  hoverBackground: gitHubColors.autoGray3,
+  activeBackground: "#BEC7DA24",
+  background: "#BEC7DA14",
+  hoverBackground: "#BEC7DA24",
 });
 
 // Badges
