@@ -383,6 +383,38 @@ const walkThroughTheme = createTheme("walkThrough", {
   embeddedEditorBackground: gitHubColors.bgBackdrop,
 });
 
+// Diff editor
+// -----------
+
+const diffEditorTheme = createTheme("diffEditor", {
+  diagonalFill: gitHubColors.diffBlobEmptyBlockBg,
+  insertedTextBackground: gitHubColors.diffBlobAdditionNumBg,
+  removedTextBackground: gitHubColors.diffBlobDeletionNumBg,
+
+  // border: "",
+  // insertedTextBorder: "",
+  // removedTextBorder: "",
+});
+
+// Merge conflict
+// --------------
+
+const mergeTheme = createTheme("merge", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  commonContentBackground: gitHubColors.bgInfo,
+  commonHeaderBackground: gitHubColors.bgTertiary,
+  currentContentBackground: "#102D1D",
+  currentHeaderBackground: "#104020",
+  incomingContentBackground: "#0E1E41",
+  incomingHeaderBackground: "#112A62",
+});
+
+const editorOverviewRulerMergeTheme = createTheme("editorOverviewRuler", {
+  currentContentForeground: "#104020",
+  incomingContentForeground: "#112A62",
+  commonContentForeground: gitHubColors.bgInfo,
+});
+
 //
 // ---
 //
@@ -465,12 +497,6 @@ const editorOverviewRulerTheme = createTheme("editorOverviewRuler", {
   warningForeground: gitHubColors.alertWarnBg,
   infoForeground: gitHubColors.alertInfoBg,
   bracketMatchForeground: gitHubColors.codeSelectionBg,
-});
-
-const diffEditorTheme = createTheme("diffEditor", {
-  insertedTextBackground: gitHubColors.diffBlobAdditionNumBg,
-  removedTextBackground: gitHubColors.diffBlobDeletionNumBg,
-  diagonalFill: gitHubColors.diffBlobEmptyBlockBg,
 });
 
 const editorWidgetTheme = createTheme("editorWidget", {
@@ -587,6 +613,9 @@ async function main(): Promise<void> {
           ...treeTheme,
           ...walkThroughTheme,
           ...welcomePageTheme,
+          ...diffEditorTheme,
+          ...mergeTheme,
+          ...editorOverviewRulerMergeTheme,
 
           "pickerGroup.border": primaryBorderFlow(gitHubColors.borderPrimary),
           "pickerGroup.foreground": gitHubColors.textPrimary,
@@ -594,7 +623,6 @@ async function main(): Promise<void> {
           "quickInput.foreground": gitHubColors.textPrimary,
           "quickInputTitle.background": "",
 
-          ...diffEditorTheme,
           ...editorCursorTheme,
           ...editorGutterTheme,
           ...editorIndentGuideTheme,
