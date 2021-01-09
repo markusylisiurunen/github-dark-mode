@@ -456,6 +456,23 @@ const peekViewTitleDescriptionTheme = createTheme("peekViewTitleDescription", {
   foreground: gitHubColors.textSecondary,
 });
 
+// Quick picker
+// ------------
+
+const pickerGroupTheme = createTheme("pickerGroup", {
+  border: primaryBorderFlow(gitHubColors.borderPrimary),
+  foreground: gitHubColors.textPrimary,
+});
+
+const quickInputTheme = createTheme("quickInput", {
+  background: gitHubColors.bgTertiary,
+  foreground: gitHubColors.textPrimary,
+});
+
+const quickInputTitleTheme = createTheme("quickInputTitle", {
+  background: gitHubColors.bgTertiary,
+});
+
 // Editor
 // ------
 
@@ -525,6 +542,70 @@ const searchEditorTheme = createTheme("searchEditor", {
   findMatchBorder: colorTextSelectionBorder,
 
   // textInputBorder: "",
+});
+
+const editorLinkTheme = createTheme("editorLink", {
+  activeForeground: gitHubColors.prettylightsSyntaxConstantOtherReferenceLink,
+});
+
+const editorWhitespaceTheme = createTheme("editorWhitespace", {
+  foreground: gitHubColors.textDisabled,
+});
+
+const editorCodeLensTheme = createTheme("editorCodeLens", {
+  foreground: gitHubColors.textDisabled,
+});
+
+const editorLightBulbTheme = createTheme("editorLightBulb", {
+  foreground: gitHubColors.iconInfo,
+});
+
+const editorLightBulbAutoFixTheme = createTheme("editorLightBulbAutoFix", {
+  foreground: gitHubColors.iconInfo,
+});
+
+const editorBracketMatchTheme = createTheme("editorBracketMatch", {
+  background: colorTextSelectionBg,
+  border: colorTextSelectionBorder,
+});
+
+const editorErrorTheme = createTheme("editorError", {
+  foreground: gitHubColors.alertErrorText,
+
+  // background: "",
+  // border: "",
+});
+
+const editorWarningTheme = createTheme("editorWarning", {
+  foreground: gitHubColors.alertWarnText,
+
+  // background: "",
+  // border: "",
+});
+
+const editorInfoTheme = createTheme("editorInfo", {
+  foreground: gitHubColors.alertInfoText,
+
+  // background: "",
+  // border: "",
+});
+
+const editorHintTheme = createTheme("editorHint", {
+  foreground: gitHubColors.textPrimary,
+
+  // border: "",
+});
+
+const problemsErrorIconTheme = createTheme("problemsErrorIcon", {
+  foreground: gitHubColors.alertErrorIcon,
+});
+
+const problemsWarningIconTheme = createTheme("problemsWarningIcon", {
+  foreground: gitHubColors.alertWarnIcon,
+});
+
+const problemsInfoIconTheme = createTheme("problemsInfoIcon", {
+  foreground: gitHubColors.alertInfoIcon,
 });
 
 const editorOverviewRulerTheme = createTheme("editorOverviewRuler", {
@@ -634,14 +715,41 @@ async function main(): Promise<void> {
           ...breadcrumbTheme,
           ...buttonTheme,
           ...checkboxTheme,
+          ...diffEditorTheme,
           ...dropdownTheme,
+          ...editorBracketMatchTheme,
+          ...editorCodeLensTheme,
+          ...editorCursorTheme,
+          ...editorErrorTheme,
           ...editorGroupHeaderTheme,
           ...editorGroupTheme,
+          ...editorGutterTheme,
+          ...editorHintTheme,
+          ...editorHoverWidgetTheme,
+          ...editorIndentGuideTheme,
+          ...editorInfoTheme,
+          ...editorLightBulbAutoFixTheme,
+          ...editorLightBulbTheme,
+          ...editorLineNumberTheme,
+          ...editorLinkTheme,
+          ...editorMarkerNavigationErrorTheme,
+          ...editorMarkerNavigationInfoTheme,
+          ...editorMarkerNavigationTheme,
+          ...editorMarkerNavigationWarningTheme,
+          ...editorOverviewRulerMergeTheme,
+          ...editorOverviewRulerTheme,
+          ...editorRulerTheme,
+          ...editorSuggestWidgetTheme,
+          ...editorTheme,
+          ...editorWarningTheme,
+          ...editorWhitespaceTheme,
+          ...editorWidgetTheme,
           ...inputOptionTheme,
           ...inputTheme,
           ...inputValidationTheme,
           ...listFilterWidgetTheme,
           ...listTheme,
+          ...mergeTheme,
           ...minimapGutterTheme,
           ...minimapSliderTheme,
           ...minimapTheme,
@@ -650,8 +758,22 @@ async function main(): Promise<void> {
           ...panelSectionTheme,
           ...panelTheme,
           ...panelTitleTheme,
+          ...peekViewEditorGutterTheme,
+          ...peekViewEditorTheme,
+          ...peekViewResultTheme,
+          ...peekViewTheme,
+          ...peekViewTitleDescriptionTheme,
+          ...peekViewTitleLabelTheme,
+          ...peekViewTitleTheme,
+          ...pickerGroupTheme,
+          ...problemsErrorIconTheme,
+          ...problemsInfoIconTheme,
+          ...problemsWarningIconTheme,
+          ...quickInputTheme,
+          ...quickInputTitleTheme,
           ...scrollbarSliderTheme,
           ...scrollbarTheme,
+          ...searchEditorTheme,
           ...sideBarSectionHeaderTheme,
           ...sideBarTheme,
           ...sideBarTitleTheme,
@@ -668,38 +790,6 @@ async function main(): Promise<void> {
           ...treeTheme,
           ...walkThroughTheme,
           ...welcomePageTheme,
-          ...diffEditorTheme,
-          ...mergeTheme,
-          ...editorOverviewRulerMergeTheme,
-          ...peekViewEditorGutterTheme,
-          ...peekViewEditorTheme,
-          ...peekViewResultTheme,
-          ...peekViewTheme,
-          ...peekViewTitleDescriptionTheme,
-          ...peekViewTitleLabelTheme,
-          ...peekViewTitleTheme,
-          ...editorHoverWidgetTheme,
-          ...searchEditorTheme,
-          ...editorMarkerNavigationTheme,
-          ...editorMarkerNavigationErrorTheme,
-          ...editorMarkerNavigationWarningTheme,
-          ...editorMarkerNavigationInfoTheme,
-
-          "pickerGroup.border": primaryBorderFlow(gitHubColors.borderPrimary),
-          "pickerGroup.foreground": gitHubColors.textPrimary,
-          "quickInput.background": gitHubColors.bgTertiary,
-          "quickInput.foreground": gitHubColors.textPrimary,
-          "quickInputTitle.background": "",
-
-          ...editorCursorTheme,
-          ...editorGutterTheme,
-          ...editorIndentGuideTheme,
-          ...editorLineNumberTheme,
-          ...editorOverviewRulerTheme,
-          ...editorRulerTheme,
-          ...editorSuggestWidgetTheme,
-          ...editorTheme,
-          ...editorWidgetTheme,
         },
         tokenColors: [
           {
