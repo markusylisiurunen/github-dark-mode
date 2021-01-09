@@ -210,6 +210,8 @@
     "peekViewTitleLabel.foreground": "#c9d1d9",
     "peekViewTitle.background": "#161b22",
     "editorHoverWidget.statusBarBackground": "#388bfd19",
+    "searchEditor.findMatchBackground": "#153051",
+    "searchEditor.findMatchBorder": "#79c0ff4c",
     "editorMarkerNavigation.background": "#161b22",
     "editorMarkerNavigationError.background": "#f8514966",
     "editorMarkerNavigationWarning.background": "#bb800966",
