@@ -1,7 +1,7 @@
 {
   "name": "GitHub Dark Mode",
   "type": "dark",
-  "semanticHighlighting": true,
+  "semanticHighlighting": false,
   "colors": {
     "foreground": "#c9d1d9",
     "focusBorder": "#388bfd",
@@ -301,13 +301,40 @@
     },
     {
       "scope": [
+        "variable.other.constant",
+        "entity.name.type"
+      ],
+      "settings": {
+        "foreground": "#c9d1d9"
+      }
+    },
+    {
+      "scope": [
         "constant",
         "entity.name.constant",
-        "variable.other.constant",
-        "variable.language"
+        "variable.language",
+        "variable.other.object.property"
       ],
       "settings": {
         "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": [
+        "meta.object.member",
+        "variable.other.property"
+      ],
+      "settings": {
+        "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": [
+        "meta.brace",
+        "meta.objectliteral"
+      ],
+      "settings": {
+        "foreground": "#c9d1d9"
       }
     },
     {
@@ -320,7 +347,7 @@
       }
     },
     {
-      "scope": "variable.parameter.function",
+      "scope": "variable.parameter",
       "settings": {
         "foreground": "#c9d1d9"
       }
@@ -335,6 +362,18 @@
       "scope": "keyword",
       "settings": {
         "foreground": "#ff7b72"
+      }
+    },
+    {
+      "scope": "keyword.operator.assignment",
+      "settings": {
+        "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": "keyword.operator.type",
+      "settings": {
+        "foreground": "#c9d1d9"
       }
     },
     {
@@ -367,9 +406,23 @@
       }
     },
     {
+      "scope": [
+        "punctuation.definition.template-expression"
+      ],
+      "settings": {
+        "foreground": "#c9d1d9"
+      }
+    },
+    {
       "scope": "support",
       "settings": {
         "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": "support.type",
+      "settings": {
+        "foreground": "#ff7b72"
       }
     },
     {
