@@ -693,7 +693,7 @@ async function main(): Promise<void> {
       {
         name: "GitHub Dark Mode",
         type: "dark",
-        semanticHighlighting: true,
+        semanticHighlighting: false,
         colors: {
           foreground: gitHubColors.textPrimary,
           focusBorder: gitHubColors.stateFocusBorder,
@@ -800,14 +800,32 @@ async function main(): Promise<void> {
             },
           },
           {
+            scope: ["variable.other.constant", "entity.name.type"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxStorageModifierImport,
+            },
+          },
+          {
             scope: [
               "constant",
               "entity.name.constant",
-              "variable.other.constant",
               "variable.language",
+              "variable.other.object.property",
             ],
             settings: {
               foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            scope: ["meta.object.member", "variable.other.property"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            scope: ["meta.brace", "meta.objectliteral"],
+            settings: {
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
@@ -817,7 +835,7 @@ async function main(): Promise<void> {
             },
           },
           {
-            scope: "variable.parameter.function",
+            scope: "variable.parameter",
             settings: {
               foreground: gitHubColors.textPrimary,
             },
@@ -832,6 +850,18 @@ async function main(): Promise<void> {
             scope: "keyword",
             settings: {
               foreground: gitHubColors.prettylightsSyntaxKeyword,
+            },
+          },
+          {
+            scope: "keyword.operator.assignment",
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            scope: "keyword.operator.type",
+            settings: {
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
@@ -861,9 +891,21 @@ async function main(): Promise<void> {
             },
           },
           {
+            scope: ["punctuation.definition.template-expression"],
+            settings: {
+              foreground: gitHubColors.textPrimary,
+            },
+          },
+          {
             scope: "support",
             settings: {
               foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            scope: "support.type",
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxKeyword,
             },
           },
           {
