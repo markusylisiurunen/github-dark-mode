@@ -796,7 +796,7 @@ async function main(): Promise<void> {
               "string.comment",
             ],
             settings: {
-              foreground: "#6a737d",
+              foreground: gitHubColors.prettylightsSyntaxComment,
             },
           },
           {
@@ -807,37 +807,37 @@ async function main(): Promise<void> {
               "variable.language",
             ],
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: ["entity", "entity.name"],
             settings: {
-              foreground: "#b392f0",
+              foreground: gitHubColors.prettylightsSyntaxEntity,
             },
           },
           {
             scope: "variable.parameter.function",
             settings: {
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
             scope: "entity.name.tag",
             settings: {
-              foreground: "#85e89d",
+              foreground: gitHubColors.prettylightsSyntaxEntityTag,
             },
           },
           {
             scope: "keyword",
             settings: {
-              foreground: "#f97583",
+              foreground: gitHubColors.prettylightsSyntaxKeyword,
             },
           },
           {
             scope: ["storage", "storage.type"],
             settings: {
-              foreground: "#f97583",
+              foreground: gitHubColors.prettylightsSyntaxKeyword,
             },
           },
           {
@@ -847,7 +847,7 @@ async function main(): Promise<void> {
               "storage.type.java",
             ],
             settings: {
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
@@ -857,92 +857,96 @@ async function main(): Promise<void> {
               "string punctuation.section.embedded source",
             ],
             settings: {
-              foreground: "#9ecbff",
+              foreground: gitHubColors.prettylightsSyntaxString,
             },
           },
           {
             scope: "support",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "meta.property-name",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "variable",
             settings: {
-              foreground: "#ffab70",
+              foreground: gitHubColors.prettylightsSyntaxVariable,
             },
           },
           {
             scope: "variable.other",
             settings: {
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
             scope: "invalid.broken",
             settings: {
               fontStyle: "italic",
-              foreground: "#fdaeb7",
+              background: gitHubColors.prettylightsSyntaxInvalidIllegalBg,
+              foreground: gitHubColors.prettylightsSyntaxInvalidIllegalText,
             },
           },
           {
             scope: "invalid.deprecated",
             settings: {
               fontStyle: "italic",
-              foreground: "#fdaeb7",
+              background: gitHubColors.prettylightsSyntaxInvalidIllegalBg,
+              foreground: gitHubColors.prettylightsSyntaxInvalidIllegalText,
             },
           },
           {
             scope: "invalid.illegal",
             settings: {
               fontStyle: "italic",
-              foreground: "#fdaeb7",
+              background: gitHubColors.prettylightsSyntaxInvalidIllegalBg,
+              foreground: gitHubColors.prettylightsSyntaxInvalidIllegalText,
             },
           },
           {
             scope: "invalid.unimplemented",
             settings: {
               fontStyle: "italic",
-              foreground: "#fdaeb7",
+              background: gitHubColors.prettylightsSyntaxInvalidIllegalBg,
+              foreground: gitHubColors.prettylightsSyntaxInvalidIllegalText,
             },
           },
           {
             scope: "carriage-return",
             settings: {
               fontStyle: "italic underline",
-              background: "#f97583",
-              foreground: "#24292e",
+              background: gitHubColors.prettylightsSyntaxCarriageReturnBg,
+              foreground: gitHubColors.prettylightsSyntaxCarriageReturnText,
               content: "^M",
             },
           },
           {
             scope: "message.error",
             settings: {
-              foreground: "#fdaeb7",
+              foreground: gitHubColors.alertErrorText,
             },
           },
           {
             scope: "string source",
             settings: {
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
             scope: "string variable",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: ["source.regexp", "string.regexp"],
             settings: {
-              foreground: "#dbedff",
+              foreground: gitHubColors.prettylightsSyntaxString,
             },
           },
           {
@@ -953,71 +957,71 @@ async function main(): Promise<void> {
               "string.regexp string.regexp.arbitrary-repitition",
             ],
             settings: {
-              foreground: "#dbedff",
+              foreground: gitHubColors.prettylightsSyntaxString,
             },
           },
           {
             scope: "string.regexp constant.character.escape",
             settings: {
               fontStyle: "bold",
-              foreground: "#85e89d",
+              foreground: gitHubColors.prettylightsSyntaxEntityTag,
             },
           },
           {
             scope: "support.constant",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "support.variable",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "meta.module-reference",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "punctuation.definition.list.begin.markdown",
             settings: {
-              foreground: "#ffab70",
+              foreground: gitHubColors.prettylightsSyntaxVariable,
             },
           },
           {
             scope: ["markup.heading", "markup.heading entity.name"],
             settings: {
               fontStyle: "bold",
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "markup.quote",
             settings: {
-              foreground: "#85e89d",
+              foreground: gitHubColors.prettylightsSyntaxEntityTag,
             },
           },
           {
             scope: "markup.italic",
             settings: {
               fontStyle: "italic",
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
             scope: "markup.bold",
             settings: {
               fontStyle: "bold",
-              foreground: "#e1e4e8",
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
             scope: "markup.raw",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
@@ -1027,8 +1031,8 @@ async function main(): Promise<void> {
               "punctuation.definition.deleted",
             ],
             settings: {
-              background: "#86181d",
-              foreground: "#fdaeb7",
+              background: gitHubColors.prettylightsSyntaxMarkupDeletedBg,
+              foreground: gitHubColors.prettylightsSyntaxMarkupDeletedText,
             },
           },
           {
@@ -1038,48 +1042,48 @@ async function main(): Promise<void> {
               "punctuation.definition.inserted",
             ],
             settings: {
-              background: "#144620",
-              foreground: "#85e89d",
+              background: gitHubColors.prettylightsSyntaxMarkupInsertedBg,
+              foreground: gitHubColors.prettylightsSyntaxMarkupInsertedText,
             },
           },
           {
             scope: ["markup.changed", "punctuation.definition.changed"],
             settings: {
-              background: "#c24e00",
-              foreground: "#ffab70",
+              background: gitHubColors.prettylightsSyntaxMarkupChangedBg,
+              foreground: gitHubColors.prettylightsSyntaxMarkupChangedText,
             },
           },
           {
             scope: ["markup.ignored", "markup.untracked"],
             settings: {
-              foreground: "#2f363d",
-              background: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxMarkupIgnoredText,
+              background: gitHubColors.prettylightsSyntaxMarkupIgnoredBg,
             },
           },
           {
             scope: "meta.diff.range",
             settings: {
-              foreground: "#b392f0",
+              foreground: gitHubColors.prettylightsSyntaxEntity,
               fontStyle: "bold",
             },
           },
           {
             scope: "meta.diff.header",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "meta.separator",
             settings: {
               fontStyle: "bold",
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
             scope: "meta.output",
             settings: {
-              foreground: "#79b8ff",
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
@@ -1092,19 +1096,21 @@ async function main(): Promise<void> {
               "brackethighlighter.quote",
             ],
             settings: {
-              foreground: "#d1d5da",
+              foreground:
+                gitHubColors.prettylightsSyntaxBrackethighlighterAngle,
             },
           },
           {
             scope: "brackethighlighter.unmatched",
             settings: {
-              foreground: "#fdaeb7",
+              foreground:
+                gitHubColors.prettylightsSyntaxBrackethighlighterUnmatched,
             },
           },
           {
             scope: ["constant.other.reference.link", "string.other.link"],
             settings: {
-              foreground: "#dbedff",
+              foreground: gitHubColors.prettylightsSyntaxString,
               fontStyle: "underline",
             },
           },
