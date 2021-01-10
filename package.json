@@ -34,7 +34,11 @@
     "dev": "concurrently -k \"tsc --watch\" \"nodemon -w ./dist ./dist/index.js\"",
     "build": "tsc"
   },
+  "dependencies": {
+    "color-diff": "^1.2.0"
+  },
   "devDependencies": {
+    "@types/color-diff": "^1.1.0",
     "@types/lodash.flow": "^3.5.6",
     "@types/node": "^14.14.20",
     "concurrently": "^5.3.0",
