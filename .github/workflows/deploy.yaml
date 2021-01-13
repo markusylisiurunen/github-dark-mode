@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  deploy-extension:
+    name: Deploy extension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: |
+          npm install -g vsce
+          yarn
+
+      - name: Build extension
+        run: yarn build
+
+      - name: Publish to Visual Studio Marketplace
+        run: |
+          vsce package
+          vsce publish -p $ACCESS_TOKEN --yarn
+        env:
+          ACCESS_TOKEN: ${{ secrets.AZURE_ACCESS_TOKEN }}
