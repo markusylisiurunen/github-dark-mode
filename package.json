@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/lodash.flow": "^3.5.6",
-    "@types/node": "^14.14.12",
+    "@types/node": "^14.14.20",
     "concurrently": "^5.3.0",
     "lodash.flow": "^3.5.0",
     "nodemon": "^2.0.6",
