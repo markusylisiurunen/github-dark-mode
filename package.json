@@ -1,10 +1,34 @@
 {
-  "name": "github-dark-mode",
+  "name": "githubdarkmode",
   "version": "0.0.1",
-  "description": "Github Dark Mode for Visual Studio Code",
-  "license": "MIT",
+  "publisher": "markusylisiurunen",
   "engines": {
     "vscode": "^1.52.0"
+  },
+  "license": "MIT",
+  "displayName": "GitHub Dark Mode",
+  "description": "GitHub Dark Mode theme for Visual Studio Code",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "github",
+    "github dark mode",
+    "dark mode"
+  ],
+  "preview": true,
+  "contributes": {
+    "themes": [
+      {
+        "label": "GitHub Dark Mode",
+        "uiTheme": "vs-dark",
+        "path": "./themes/github-dark-mode.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markusylisiurunen/github-dark-mode"
   },
   "scripts": {
     "dev": "concurrently -k \"tsc --watch\" \"nodemon -w ./dist ./dist/index.js\"",
@@ -17,14 +41,5 @@
     "lodash.flow": "^3.5.0",
     "nodemon": "^2.0.6",
     "typescript": "^4.1.2"
-  },
-  "contributes": {
-    "themes": [
-      {
-        "label": "GitHub Dark Mode",
-        "uiTheme": "vs-dark",
-        "path": "./themes/github-dark-mode.json"
-      }
-    ]
   }
 }

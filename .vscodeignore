@@ -1,0 +1,8 @@
+.github
+.vscode
+demo
+scripts
+src
+
+.editorconfig
+tsconfig.json
