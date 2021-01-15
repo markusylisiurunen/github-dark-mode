@@ -40,7 +40,7 @@
   "devDependencies": {
     "@types/color-diff": "^1.1.0",
     "@types/lodash.flow": "^3.5.6",
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "concurrently": "^5.3.0",
     "lodash.flow": "^3.5.0",
     "nodemon": "^2.0.7",
