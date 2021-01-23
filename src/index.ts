@@ -19,7 +19,7 @@ function createTheme(prefix: string, colors: Record<string, string>) {
 // Common color flows
 // ==================
 
-const primaryBorderFlow = _flow([multiplyTransparencyBy(0.8)]);
+const primaryBorderFlow = _flow([multiplyTransparencyBy(0.333)]);
 
 // Workbench
 // =========
