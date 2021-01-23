@@ -136,9 +136,9 @@ const statusBarItemTheme = createTheme("statusBarItem", {
 // --------
 
 const terminalTheme = createTheme("terminal", {
-  ansiBlack: gitHubColors.ansiBlack,
+  ansiBlack: gitHubColors.ansiGray,
   ansiBlue: gitHubColors.ansiBlue,
-  ansiBrightBlack: gitHubColors.ansiBlackBright,
+  ansiBrightBlack: gitHubColors.ansiGray,
   ansiBrightBlue: gitHubColors.ansiBlueBright,
   ansiBrightCyan: gitHubColors.ansiCyanBright,
   ansiBrightGreen: gitHubColors.ansiGreenBright,
