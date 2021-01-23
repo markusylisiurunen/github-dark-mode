@@ -813,10 +813,18 @@ async function main(): Promise<void> {
               "constant",
               "entity.name.constant",
               "variable.language",
+              "variable.object.property",
               "variable.other.object.property",
+              "variable.other.constant.property",
             ],
             settings: {
               foreground: gitHubColors.prettylightsSyntaxConstant,
+            },
+          },
+          {
+            scope: ["constant.language.import-export-all"],
+            settings: {
+              foreground: gitHubColors.textPrimary,
             },
           },
           {
@@ -832,7 +840,7 @@ async function main(): Promise<void> {
             },
           },
           {
-            scope: ["entity", "entity.name"],
+            scope: ["entity", "entity.name", "support.function"],
             settings: {
               foreground: gitHubColors.prettylightsSyntaxEntity,
             },
@@ -862,7 +870,7 @@ async function main(): Promise<void> {
             },
           },
           {
-            scope: "keyword.operator.type",
+            scope: ["keyword.operator.type", "keyword.operator.optional"],
             settings: {
               foreground: gitHubColors.textPrimary,
             },
@@ -871,6 +879,12 @@ async function main(): Promise<void> {
             scope: ["storage", "storage.type"],
             settings: {
               foreground: gitHubColors.prettylightsSyntaxKeyword,
+            },
+          },
+          {
+            scope: ["storage.type.function.arrow"],
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxConstant,
             },
           },
           {
@@ -894,7 +908,11 @@ async function main(): Promise<void> {
             },
           },
           {
-            scope: ["punctuation.definition.template-expression"],
+            scope: [
+              "punctuation.definition.template-expression",
+              "punctuation.definition.parameters",
+              "punctuation.definition.block",
+            ],
             settings: {
               foreground: gitHubColors.textPrimary,
             },
