@@ -702,8 +702,11 @@ async function main(): Promise<void> {
 
           "icon.foreground": gitHubColors.iconPrimary,
           "sash.hoverBorder": gitHubColors.borderInfo,
-          "selection.background": colorTextSelectionBg,
           "widget.shadow": "#00000000",
+
+          // FIXME: This seems to be rendered somewhat weirdly. The color is set correctly
+          // in terms of CSS but the rendered color does not match the color set here...
+          "selection.background": "#79a3d6",
 
           ...activityBarBadgeTheme,
           ...activityBarTheme,
