@@ -8,6 +8,11 @@
   "license": "MIT",
   "displayName": "GitHub Dark Mode",
   "description": "GitHub Dark Mode theme for Visual Studio Code",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#161b22",
+    "theme": "dark"
+  },
   "categories": [
     "Themes"
   ],
