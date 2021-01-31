@@ -29,6 +29,6 @@ jobs:
       - name: Publish to Visual Studio Marketplace
         run: |
           vsce package
-          vsce publish -p $ACCESS_TOKEN --yarn
+          vsce publish -p $ACCESS_TOKEN --yarn --githubBranch main
         env:
           ACCESS_TOKEN: ${{ secrets.AZURE_ACCESS_TOKEN }}
