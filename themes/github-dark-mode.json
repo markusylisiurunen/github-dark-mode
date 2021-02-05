@@ -450,6 +450,12 @@
       }
     },
     {
+      "scope": "source.json support.type.property-name",
+      "settings": {
+        "foreground": "#a5d6ff"
+      }
+    },
+    {
       "scope": "meta.property-name",
       "settings": {
         "foreground": "#79c0ff"

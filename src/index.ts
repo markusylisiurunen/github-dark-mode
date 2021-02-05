@@ -930,6 +930,12 @@ async function main(): Promise<void> {
             },
           },
           {
+            scope: "source.json support.type.property-name",
+            settings: {
+              foreground: gitHubColors.prettylightsSyntaxString,
+            },
+          },
+          {
             scope: "meta.property-name",
             settings: {
               foreground: gitHubColors.prettylightsSyntaxConstant,
