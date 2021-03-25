@@ -43,7 +43,7 @@
     "color-diff": "^1.2.0"
   },
   "devDependencies": {
-    "@types/color-diff": "^1.1.0",
+    "@types/color-diff": "^1.2.0",
     "@types/lodash.flow": "^3.5.6",
     "@types/node": "^14.14.35",
     "concurrently": "^6.0.0",

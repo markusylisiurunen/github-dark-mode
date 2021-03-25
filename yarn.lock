@@ -35,10 +35,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/color-diff@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@types/color-diff/-/color-diff-1.1.0.tgz#8e073f84fae38029db8a22222f0759a297778c8c"
-  integrity sha512-7o3cNkvdjvtErRMsC2nI3Y4WpZB80vfKdQDwhby2yGYhD/j+TbYFSqgnLIGDrycAy9+NMcESRTyaUWP1IX/Ypw==
+"@types/color-diff@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/color-diff/-/color-diff-1.2.0.tgz#34264f9620be52d339f1dd2f4e2e808df405f9ed"
+  integrity sha512-SvgNmEQ4mf/GSJl3WI3ZIIQM+Irs/28kzKj8mxavQ37BWgV+jOb8KIv1xHM9/9ljY5GgQFDl5i/6IoqD/DySCA==
 
 "@types/lodash.flow@^3.5.6":
   version "3.5.6"
