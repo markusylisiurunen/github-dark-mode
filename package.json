@@ -46,7 +46,7 @@
     "@types/color-diff": "^1.2.0",
     "@types/lodash.flow": "^3.5.6",
     "@types/node": "^14.14.37",
-    "concurrently": "^6.0.1",
+    "concurrently": "^6.0.2",
     "lodash.flow": "^3.5.0",
     "nodemon": "^2.0.7",
     "typescript": "^4.2.4"
