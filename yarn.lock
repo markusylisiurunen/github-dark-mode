@@ -19,10 +19,10 @@
   resolved "https://registry.yarnpkg.com/@types/color-diff/-/color-diff-1.2.1.tgz#f455af6fb80c7ab7806881c7abb082e7a076e9d0"
   integrity sha512-iemOGPqMODUJyDbd8TVV9vdaHfbO1Z7rQhql1umt75Z7NUminF7MXvWaNxh5+aizZpeei2WFGGrpmOocuqh8oQ==
 
-"@types/lodash.flow@^3.5.6":
-  version "3.5.6"
-  resolved "https://registry.yarnpkg.com/@types/lodash.flow/-/lodash.flow-3.5.6.tgz#ecbdae376e610313ac6361430f2f59a8dc9a813f"
-  integrity sha512-mpSgC8s1alwO8I5223G//0vSt1BTR395TdxbkprAUgedRaW71Ew9ajSIjk9hsSpWxGki6ExPDnI3zKeJjyeHwQ==
+"@types/lodash.flow@^3.5.7":
+  version "3.5.7"
+  resolved "https://registry.yarnpkg.com/@types/lodash.flow/-/lodash.flow-3.5.7.tgz#fabf602692fe77e1b0ba3231b5b7095afbeae9de"
+  integrity sha512-F3avAQHJPiewhugySHZ8CUgnYRiJwauOU5/PQdxWs8VU3WDbPnyea1XQ8rC8VT+08J43Ycz9fH1QD+isJukAxA==
   dependencies:
     "@types/lodash" "*"
 
