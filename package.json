@@ -48,7 +48,7 @@
     "@types/node": "^16.11.43",
     "concurrently": "^7.2.2",
     "lodash.flow": "^3.5.0",
-    "nodemon": "^2.0.18",
+    "nodemon": "^2.0.19",
     "typescript": "^4.7.4"
   }
 }
