@@ -19,10 +19,10 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.165.tgz#74d55d947452e2de0742bad65270433b63a8c30f"
   integrity sha512-tjSSOTHhI5mCHTy/OOXYIhi2Wt1qcbHmuXD1Ha7q70CgI/I71afO4XtLb/cVexki1oVYchpul/TOuu3Arcdxrg==
 
-"@types/node@^16.18.3":
-  version "16.18.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.3.tgz#d7f7ba828ad9e540270f01ce00d391c54e6e0abc"
-  integrity sha512-jh6m0QUhIRcZpNv7Z/rpN+ZWXOicUUQbSoWks7Htkbb9IjFQj4kzcX/xFCkjstCj5flMsN8FiSvt+q+Tcs4Llg==
+"@types/node@^16.18.4":
+  version "16.18.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.4.tgz#712ba61b4caf091fc6490301b1888356638c17bd"
+  integrity sha512-9qGjJ5GyShZjUfx2ArBIGM+xExdfLvvaCyQR0t6yRXKPcWCVYF/WemtX/uIU3r7FYECXRXkIiw2Vnhn6y8d+pw==
 
 abbrev@1:
   version "1.1.1"
