@@ -118,10 +118,10 @@ color-convert@^2.0.1:
   dependencies:
     color-name "~1.1.4"
 
-color-diff@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/color-diff/-/color-diff-1.2.0.tgz#01a7c806de47dbd5ae571da49e65489666c999a7"
-  integrity sha512-FN7iLBCfb97ElJU2AQXbBAFXPbKmu0XJjPU9GWWmUkIbXka+Im8Q5w1geiL9GB+AktJ4pIA6nRZD1+TlEG6/rA==
+color-diff@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/color-diff/-/color-diff-1.3.0.tgz#bc0532ad6634e081660a0b39e903b1dbddb14b80"
+  integrity sha512-+qVI58koyA2DSknU2wLZrMomgKvFSLndY9lkaraZcelbeedD3hgPuy9fXsCQo/UFmxzG4SUZ3lPTryic9wLacQ==
 
 color-name@~1.1.4:
   version "1.1.4"
